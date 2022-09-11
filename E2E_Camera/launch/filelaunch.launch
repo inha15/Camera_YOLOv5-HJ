@@ -1,0 +1,21 @@
+<launch>
+    <group ns="yolov5">
+        <node pkg="E2E_Camera" type="using_video.py" name="FILE">
+            <rosparam file="$(find E2E_Camera)/scripts/Camera_code/using_video.yaml" command="load" />
+        </node>
+
+        <node pkg="E2E_Camera" type="detect_with_yolov5.py" name="yolov5">
+            <param name="PT" value="0713_intg.pt" />
+        </node>
+    </group>
+
+    <group ns="data_sender">
+        <node pkg="E2E_Camera" type="Advenced_Camera.py" name="AdvCam" output="screen">
+            <param name="class_cnt" value="15" />
+            <!-- value/10 == sec -->
+        </node>
+        <node pkg="E2E_Camera" type="data_sender.py" name="data_sender">
+        </node>
+    </group>
+
+</launch>

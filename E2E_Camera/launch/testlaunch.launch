@@ -1,0 +1,6 @@
+<launch>
+    <group ns="test">
+        <node pkg="E2E_Camera" type="RealSense.py" name="image_generater" output="screen"> </node>
+        <node pkg="E2E_Camera" type="receiver.py" name="image_receiver"> </node>
+    </group>
+</launch>

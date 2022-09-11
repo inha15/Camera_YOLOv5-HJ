@@ -1,0 +1,5 @@
+Width: 1920
+Height: 1080
+Type: "video" # video or folder
+Path: "/media/autonav-sensor/614F-A8FB/traffic_light_test.mp4" # target path imgs : image folder path / video : video's path
+FPS: 30
